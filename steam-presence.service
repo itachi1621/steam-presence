@@ -105,6 +105,11 @@ Documentation=https://github.com/JustTemmie/steam-presence
 [Service]
 # CHANGEME: This is the full command that is run to launch steam-presence.
 # If you installed steam-presence somewhere else, then you need to change this.
+
+#If discord dropped the connection or this gets terminated restart
+Restart=always
+RestartSec=15
+
 ExecStart=/home/deck/steam-presence/bin/python -u /home/deck/steam-presence/main.py
 
 # This tells Systemd that steam-presence is a simple service:
